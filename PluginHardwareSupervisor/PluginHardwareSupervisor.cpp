@@ -82,7 +82,7 @@ void QueryWorker()
 			g_srv.Connect(m->name_space.c_str());
 		}
 
-		if (!g_srv.Exec(m->query))
+		if (!m->query.empty() && !g_srv.Exec(m->query))
 		{
 			log(LOG_ERROR, L"Query: " + m->query);
 		}
