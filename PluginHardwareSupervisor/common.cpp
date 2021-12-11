@@ -21,9 +21,16 @@
 #include <sstream>
 #include "common.h"
 
-void log(LOGLEVEL level, const std::wstring& message)
+static LOG_LEVEL g_log_level = LOG_LEVEL::NO_LOG;
+void set_log_level(LOG_LEVEL level)
 {
-	RmLog(level, message.c_str());
+	g_log_level = level;
+}
+
+void log(LOG_LEVEL level, const std::wstring& message)
+{
+	if (level <= g_log_level)
+		RmLog((LOGLEVEL)level, message.c_str());
 }
 
 Counter getCounter()

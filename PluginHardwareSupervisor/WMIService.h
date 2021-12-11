@@ -30,7 +30,7 @@ class WMIService
 {
 private:
 	IWbemServices *m_pSvc;
-	WMIService(WMIService &other); // no copy
+	WMIService(WMIService& other); // no copy
 	std::map<std::wstring, std::wstring> m_texts;	
 	std::map<std::wstring, double> m_values;
 	std::mutex m_data_mutex;
@@ -42,7 +42,7 @@ public:
 	bool Connect(LPCWSTR wmi_namespace);
 	bool IsConnected();
 	void Release();
-	bool Exec(const std::wstring &wmi_query);
+	bool Exec(const std::wstring& wmi_query);
 	const std::wstring GetText(const std::wstring& identifier);
 	double GetValue(const std::wstring& identifier);
 	bool IsValue(const std::wstring& identifier);

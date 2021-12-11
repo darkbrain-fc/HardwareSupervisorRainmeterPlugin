@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PluginHardwareSupervisor", "PluginHardwareSupervisor\PluginHardwareSupervisor.vcxproj", "{3DF55006-A25B-4709-B0A4-B7ED0E86A557}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator", "Configurator\Configurator.csproj", "{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardwareSupervisorRainmeterPlugin", "PluginHardwareSupervisor\PluginHardwareSupervisor.vcxproj", "{3DF55006-A25B-4709-B0A4-B7ED0E86A557}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BBD031B7-E500-4D09-8D9E-498677A3FA30}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configurator", "Configurator\Configurator.csproj", "{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,18 @@ Global
 		{3DF55006-A25B-4709-B0A4-B7ED0E86A557}.Release|Win32.Build.0 = Release|Win32
 		{3DF55006-A25B-4709-B0A4-B7ED0E86A557}.Release|x64.ActiveCfg = Release|x64
 		{3DF55006-A25B-4709-B0A4-B7ED0E86A557}.Release|x64.Build.0 = Release|x64
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Debug|Win32.Build.0 = Debug|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Debug|x64.Build.0 = Debug|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Release|Win32.ActiveCfg = Release|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Release|Win32.Build.0 = Release|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Release|x64.ActiveCfg = Release|Any CPU
-		{EC9497F2-E7EA-48E4-906B-E0E9B1D883C8}.Release|x64.Build.0 = Release|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Debug|Win32.Build.0 = Debug|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Release|Win32.ActiveCfg = Release|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Release|Win32.Build.0 = Release|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{2CC2CA58-BA68-4178-89A1-50F33DC6E0BF}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

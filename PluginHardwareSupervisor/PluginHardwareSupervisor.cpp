@@ -44,7 +44,7 @@ struct Measure
 	Measure() : refreshInterval(60), lastUpdate(0), queued(false) {}
 
 	std::wstring query;
-	std::wstring name_space;
+	std::wstring nameSpace;
 	std::wstring identifier;
 	std::wstring value;
 	int refreshInterval;
@@ -61,7 +61,7 @@ void QueryWorker()
 	hres = CoInitializeEx(0, COINIT_MULTITHREADED);
 	if (FAILED(hres))
 	{
-		log(LOG_ERROR, L"Failed to initialize COM library. Error code = " + std::to_wstring(hres));
+		log(LVL_ERROR, L"Failed to initialize COM library. Error code = " + std::to_wstring(hres));
 		return;
 	}
 
@@ -77,14 +77,14 @@ void QueryWorker()
 			g_queue.pop();
 		} // unlock
 
-		if (!g_srv.IsConnected() && !m->name_space.empty())
+		if (!g_srv.IsConnected() && !m->nameSpace.empty())
 		{
-			g_srv.Connect(m->name_space.c_str());
+			g_srv.Connect(m->nameSpace.c_str());
 		}
 
 		if (!m->query.empty() && !g_srv.Exec(m->query))
 		{
-			log(LOG_ERROR, L"Query: " + m->query);
+			log(LVL_ERROR, L"Query: " + m->query);
 		}
 		m->queued = false;
 	}
@@ -119,7 +119,14 @@ PLUGIN_EXPORT void Reload(void* data, void* rm, double* maxValue)
 	measure->refreshInterval = RmReadInt(rm, L"Refresh", 60);
 	measure->value = L"";
 	measure->query = RmReadString(rm, L"Query", L"");
-	measure->name_space = RmReadString(rm, L"Namespace", L"");
+	int level = RmReadInt(rm, L"LogLevel", 0);
+	if (!measure->query.empty()) {
+		if (level >= LOG_LEVEL::LVL_ERROR && level <= LOG_LEVEL::LVL_DEBUG)
+			set_log_level((LOG_LEVEL)level);
+		else
+			set_log_level(LOG_LEVEL::NO_LOG);
+	}
+	measure->nameSpace = RmReadString(rm, L"Namespace", L"");
 	measure->identifier = RmReadString(rm, L"Identifier", L"");
 	measure->lastUpdate = 0;
 }

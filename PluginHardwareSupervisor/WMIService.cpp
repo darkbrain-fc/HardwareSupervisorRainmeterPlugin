@@ -59,7 +59,7 @@ bool WMIService::Connect(LPCWSTR wmi_namespace)
 
 	if (FAILED(hres))
 	{
-		log(LOG_ERROR, L"Failed to create IWbemLocator object! Error code = " + std::to_wstring(hres));
+		log(LVL_ERROR, L"Failed to create IWbemLocator object! Error code = " + std::to_wstring(hres));
 		return false;
 	}
 
@@ -76,7 +76,7 @@ bool WMIService::Connect(LPCWSTR wmi_namespace)
 
 	if (FAILED(hres))
 	{
-		log(LOG_ERROR, L"Failed to connect to WMI server! Error code = " + std::to_wstring(hres));
+		log(LVL_ERROR, L"Failed to connect to WMI server! Error code = " + std::to_wstring(hres));
 		locator->Release();
 		return false;
 	}
@@ -95,7 +95,7 @@ bool WMIService::Connect(LPCWSTR wmi_namespace)
 
 	if (FAILED(hres))
 	{		
-		log(LOG_ERROR, L"Failed to set proxy! Error code = " + std::to_wstring(hres));
+		log(LVL_ERROR, L"Failed to set proxy! Error code = " + std::to_wstring(hres));
 		m_pSvc->Release();
 		m_pSvc = nullptr;
 		locator->Release();
@@ -141,8 +141,7 @@ bool WMIService::Exec(const std::wstring& wmi_query)
 {
 	if (!m_pSvc)
 	{
-		log(LOG_ERROR, L"Service error!");
-		//_ASSERT(false);
+		log(LVL_ERROR, L"Service error!");
 		return false;
 	}
 
@@ -158,7 +157,7 @@ bool WMIService::Exec(const std::wstring& wmi_query)
 
 	if (FAILED(hres))
 	{
-		log(LOG_ERROR, L"WMI query failed: " + wmi_query);
+		log(LVL_ERROR, L"WMI query failed: " + wmi_query);
 		return false;
 	}
 
@@ -188,7 +187,7 @@ bool WMIService::Exec(const std::wstring& wmi_query)
 					break;
 
 				if (FAILED(hr)) {
-					log(LOG_ERROR, L"IWbemClassObject::Next failed! Error code = " + std::to_wstring(hr));
+					log(LVL_ERROR, L"IWbemClassObject::Next failed! Error code = " + std::to_wstring(hr));
 					break;
 				}
 
@@ -225,7 +224,7 @@ bool WMIService::Exec(const std::wstring& wmi_query)
 	}
 
 	Counter end = getCounter();
-	log(LOG_NOTICE, L"Measuring time: " + std::to_wstring(getDelta(start, end)));
+	log(LVL_NOTICE, L"Measuring time: " + std::to_wstring(getDelta(start, end)));
 
 	return has_result;
 }

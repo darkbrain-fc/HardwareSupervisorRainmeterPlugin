@@ -21,13 +21,23 @@
 #include "RainmeterAPI.h"
 #include <string>
 
+enum LOG_LEVEL
+{
+	NO_LOG = 0,
+	LVL_ERROR = 1,
+	LVL_WARNING = 2,
+	LVL_NOTICE = 3,
+	LVL_DEBUG = 4
+};
+
 struct Counter {
 	Counter() : pc_freq(0), value(-1) {}
 	double pc_freq;
 	__int64 value;
 };
 
-void log(LOGLEVEL level, const std::wstring& message);
+void set_log_level(LOG_LEVEL level);
+void log(LOG_LEVEL level, const std::wstring& message);
 Counter getCounter();
 double getDelta(const Counter& start, const Counter& stop);
 bool isNumericValue(VARIANT vtProp);

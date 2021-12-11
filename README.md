@@ -1,7 +1,5 @@
 # HardwareSupervisorRainmeterPlugin
 
-*Version 0.1.0*
-
 HardwareSupervisorRainmeterPlugin is a Rainmeter Plugin used to show HardwareSupervisor sensors data.
 It's based on PluginWMI made by E.Butusov <ebutusov@gmail.com> 
 https://github.com/ebutusov/RainmeterPlugins/tree/master/PluginWMI
@@ -30,8 +28,7 @@ It's quite basic, you can specify a WMI namespace (`root\HardwareSupervisor` by 
 you can write your own WMI query (`SELECT * FROM Sensor` for example) and then you can press
 *Search*. A simple list of keys and values will appear. Remove with *Canc* all rows that 
 you don't want to see in HardwareSupervisorRainmeterPlugin, and edit *Name* entries to 
-what you want. Then press *Generate* and HardwareSupervisor.ini file will be generated into
-the Configurator directory. Now you can put it in
+what you want. Then press *Update* and HardwareSupervisor.ini file will be generated into
 `C:\Users\<Your account>\Documents\Rainmeter\Skins\HardwareSupervisor` directory and then 
 you can refresh the skin. 
 It was designed to work with HardwareSupervisor so probably it will not work correctly 
